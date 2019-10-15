@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<robot name="pico_l31k_2f" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Arguments -->
+    <xacro:arg name="arm" default="pico" />
+    <xacro:arg name="gripper" default="l31k_2f" />
+    <xacro:arg name="sim" default="false" />
+
+    <xacro:include filename="$(find kortex_description)/robots/kortex_robot.xacro" />
+    <xacro:load_robot arm="$(arg arm)" gripper="$(arg gripper)" sim="$(arg sim)" />
+
+</robot>

@@ -1,0 +1,21 @@
+<launch>
+
+    <arg name="ip_address" default="192.168.86.42"/> 
+
+    <include file="$(find kortex_driver)/launch/kortex_driver.launch">
+        <arg name="ip_address" value="$(arg ip_address)"/>
+        <arg name="gripper" value="robotiq_2f_85"/>
+        <arg name="start_rviz" value="false"/>
+        <arg name="start_moveit" value="false"/>
+    </include>
+
+    <include file="$(find kinova_vision)/launch/kinova_vision_rgbd.launch">
+        <arg name="device" value="$(arg ip_address)"/>
+    </include>
+    
+    <node pkg="kortex_demos" type="cube_xy_processing.py" name="cube_xy_processing" output="screen"/>
+    <node pkg="kortex_demos" type="cube_z_processing.py" name="cube_z_processing" output="screen"/>
+    <node pkg="kortex_demos" type="pickup_cube.py" name="pickup_cube" output="screen"/>
+
+
+</launch>
