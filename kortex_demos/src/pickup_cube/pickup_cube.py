@@ -32,7 +32,7 @@ class PickupDemo:
         self.BASE_FRAME = 1
         self.TOOL_FRAME = 2
         self.OPENED_GRIPPER_POSITION = 0.01
-        self.CLOSED_GRIPPER_POSITION = 0.60
+        self.CLOSED_GRIPPER_POSITION = 0.55
 
         # TS = Translation_Speed
         self.TRANSLATION_SPEED = 0.15
@@ -54,7 +54,7 @@ class PickupDemo:
 
         # Gripper positions we need
         self.gripper_opened = 0.0
-        self.gripper_closed = 0.60
+        self.gripper_closed = 0.55
 
         # Statistics
         self.start_time = time.time()
